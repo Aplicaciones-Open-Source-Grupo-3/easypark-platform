@@ -1,6 +1,6 @@
 # 🚗 EasyPark Platform
 
-Sistema de gestión de estacionamientos desarrollado con **Spring Boot 3.2** y arquitectura **DDD (Domain-Driven Design)**.
+Sistema de gestión de estacionamientos con arquitectura **DDD (Domain-Driven Design)**.
 
 ## 📋 Características
 
