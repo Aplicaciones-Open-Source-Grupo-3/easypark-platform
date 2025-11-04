@@ -266,26 +266,6 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📝 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
-## 👤 Autor
-
-**Tu Nombre**
-
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-
-## 📞 Soporte
-
-Si tienes problemas o preguntas:
-
-1. Revisa la [documentación de Swagger](http://localhost:8080/swagger-ui.html)
-2. Abre un [Issue](https://github.com/tu-usuario/easypark-platform/issues)
-3. Contacta al equipo de desarrollo
-
----
-
-⭐️ Si este proyecto te fue útil, dale una estrella en GitHub!
 
