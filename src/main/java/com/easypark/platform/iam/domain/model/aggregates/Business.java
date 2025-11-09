@@ -68,6 +68,12 @@ public class Business extends AuditableAbstractAggregateRoot<Business> {
     @Column(nullable = false)
     private String currency;
 
+    @Column(name = "grace_period_minutes")
+    private Integer gracePeriodMinutes = 15;
+
+    @Column(name = "allow_overnight")
+    private Boolean allowOvernight = true;
+
     public Business() {
     }
 
@@ -138,6 +144,14 @@ public class Business extends AuditableAbstractAggregateRoot<Business> {
         return currency;
     }
 
+    public Integer getGracePeriodMinutes() {
+        return gracePeriodMinutes;
+    }
+
+    public Boolean getAllowOvernight() {
+        return allowOvernight;
+    }
+
     // Setters
     public void setBusinessName(String businessName) {
         this.businessName = businessName;
@@ -185,6 +199,31 @@ public class Business extends AuditableAbstractAggregateRoot<Business> {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public void setGracePeriodMinutes(Integer gracePeriodMinutes) {
+        this.gracePeriodMinutes = gracePeriodMinutes;
+    }
+
+    public void setAllowOvernight(Boolean allowOvernight) {
+        this.allowOvernight = allowOvernight;
+    }
+
+    // Método para actualizar configuraciones de parking
+    public void updateParkingSettings(Integer maxCapacity, Double motorcycleRate,
+                                     Double carTruckRate, Double nightRate,
+                                     String openingTime, String closingTime,
+                                     String currency, Integer gracePeriodMinutes,
+                                     Boolean allowOvernight) {
+        if (maxCapacity != null) this.maxCapacity = maxCapacity;
+        if (motorcycleRate != null) this.motorcycleRate = motorcycleRate;
+        if (carTruckRate != null) this.carTruckRate = carTruckRate;
+        if (nightRate != null) this.nightRate = nightRate;
+        if (openingTime != null && !openingTime.isBlank()) this.openingTime = openingTime;
+        if (closingTime != null && !closingTime.isBlank()) this.closingTime = closingTime;
+        if (currency != null && !currency.isBlank()) this.currency = currency;
+        if (gracePeriodMinutes != null) this.gracePeriodMinutes = gracePeriodMinutes;
+        if (allowOvernight != null) this.allowOvernight = allowOvernight;
     }
 }
 

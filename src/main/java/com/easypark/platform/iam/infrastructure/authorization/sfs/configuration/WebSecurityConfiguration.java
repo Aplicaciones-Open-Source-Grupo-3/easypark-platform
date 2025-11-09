@@ -72,7 +72,7 @@ public class WebSecurityConfiguration {
             .sessionManagement(customizer -> customizer
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/api/iam/authentication/**").permitAll()
+                .requestMatchers("/iam/authentication/**").permitAll()
                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated());

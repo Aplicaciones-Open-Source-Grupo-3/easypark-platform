@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: easypark-backend
+    runtime: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -Dserver.port=$PORT -jar target/platform-1.0.0.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        value: jdbc:mysql://bighqeizhtcbg2szlczt-mysql.services.clever-cloud.com:3306/bighqeizhtcbg2szlczt?useSSL=true&requireSSL=true&serverTimezone=UTC
+      - key: DATABASE_USERNAME
+        value: ues1f415lj3l7lcd
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m
+

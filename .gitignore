@@ -50,6 +50,18 @@ build/
 ### VS Code ###
 .vscode/
 
+### Configuration files with credentials ###
+.env
+export-db.cmd
+import-to-clever-cloud.cmd
+*.sql
+*.cmd
+
+# Documentation files (not needed in repo)
+DEPLOY-CLEVER-CLOUD.md
+INICIO-RAPIDO.md
+CONFIGURACION-COMPLETA.md
+
 # OS files
 .DS_Store
 Thumbs.db

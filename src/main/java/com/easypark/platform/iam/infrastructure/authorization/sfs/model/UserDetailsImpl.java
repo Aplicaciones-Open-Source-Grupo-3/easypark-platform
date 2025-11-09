@@ -12,21 +12,25 @@ import java.util.stream.Collectors;
 
 public class UserDetailsImpl implements UserDetails {
 
+    private final Long id;
     private final String username;
 
     @JsonIgnore
     private final String password;
 
+    private final Long businessId;
     private final boolean accountNonExpired;
     private final boolean accountNonLocked;
     private final boolean credentialsNonExpired;
     private final boolean enabled;
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(String username, String password,
-                          Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String username, String password,
+                          Long businessId, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
         this.username = username;
         this.password = password;
+        this.businessId = businessId;
         this.authorities = authorities;
         this.accountNonExpired = true;
         this.accountNonLocked = true;
@@ -40,9 +44,19 @@ public class UserDetailsImpl implements UserDetails {
                 .collect(Collectors.toList());
 
         return new UserDetailsImpl(
+                user.getId(),
                 user.getUsername(),
                 user.getPassword(),
+                user.getBusiness().getId(),
                 authorities);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getBusinessId() {
+        return businessId;
     }
 
     @Override
