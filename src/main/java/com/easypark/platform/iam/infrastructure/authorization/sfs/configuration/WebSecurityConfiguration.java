@@ -59,10 +59,18 @@ public class WebSecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors(configurer -> configurer.configurationSource(request -> {
             var cors = new CorsConfiguration();
-            cors.setAllowedOrigins(List.of("http://localhost:4200"));
+            // Permitir origenes locales y swagger
+            cors.setAllowedOriginPatterns(List.of(
+                "http://localhost:*",
+                "https://localhost:*",
+                "http://127.0.0.1:*",
+                "https://easypark-platform.onrender.com"
+            ));
             cors.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
             cors.setAllowedHeaders(List.of("*"));
             cors.setAllowCredentials(true);
+            cors.setExposedHeaders(List.of("Authorization"));
+            cors.setMaxAge(3600L);
             return cors;
         }));
 
