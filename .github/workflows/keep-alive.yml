@@ -1,0 +1,27 @@
+name: Keep Render Service Alive
+
+on:
+  schedule:
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Backend Health Endpoint
+        run: |
+          echo "Pinging EasyPark Backend..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://easypark-backend.onrender.com/api/v1/health || echo "000")
+          echo "Response code: $response"
+          
+          if [ "$response" = "200" ] || [ "$response" = "404" ]; then
+            echo "✅ Service is responding"
+            exit 0
+          else
+            echo "⚠️ Service returned $response (might be starting up)"
+            exit 0
+          fi
+
