@@ -3,7 +3,7 @@ services:
     name: easypark-backend
     runtime: java
     plan: free
-    buildCommand: ./mvnw clean package -DskipTests
+    buildCommand: chmod +x ./mvnw && ./mvnw clean package -DskipTests
     startCommand: java -Dserver.port=$PORT -jar target/platform-1.0.0.jar
     envVars:
       - key: SPRING_PROFILES_ACTIVE
