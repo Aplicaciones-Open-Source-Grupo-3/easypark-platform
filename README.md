@@ -4,21 +4,8 @@ Sistema de gestión de estacionamientos con arquitectura **DDD (Domain-Driven De
 
 ## 📋 Características
 
-- ✅ Gestión de negocios de estacionamiento
-- ✅ API RESTful documentada con **Swagger/OpenAPI 3.0**
-3. **(Opcional) Crear la base de datos manualmente:**
-   - Password: (vacío)
-  "adminName": "Juan Pérez",
-- ✅ Persistencia de datos con **JPA/Hibernate** y **MySQL**
-- **Swagger/OpenAPI 3.0**
-- **Maven**
-
-## 📦 Requisitos Previos
-
-POST /api/v1/iam/authentication/sign-in
-
-- **Java 21** o superior
-- **MySQL 8.0** o superior
+- **Java 21** 
+- **MySQL 8.0** 
 - **Maven 3.6+** 
 
 ## 🚀 Inicio Rápido
