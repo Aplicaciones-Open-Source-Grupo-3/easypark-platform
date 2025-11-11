@@ -1,9 +1,16 @@
+# Maven
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# IDE - IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# IDE - Eclipse/STS
 .apt_generated
 .classpath
 .factorypath
@@ -12,30 +19,59 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
+# IDE - NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# IDE - VS Code
+.vscode/
+
+# Build
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-
-### OS files ###
+# OS files
 .DS_Store
 Thumbs.db
 
-### Local configuration ###
+# Local configuration
 .env
+.env.local
 *.log
+logs/
+
+# Documentation (not needed in container)
+*.md
+!README.md
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python scripts (monitoring tools)
+*.py
+__pycache__/
+*.pyc
+
+# Node modules (if any)
+node_modules/
+
+# Test files
+src/test/
+
+# Database dumps
+*.sql
+*.dump
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
 
